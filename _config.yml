@@ -1,10 +1,9 @@
-title: dash
+title: 웅's Tech Growth 
 author: GitHub User
-email: miguel-gonzalez@gmx.de
+email: woong7164@gmamil.com
 description: > # this means to ignore newlines until "show_exerpts:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+ I walk slowly, but I never walk backward.
+ 하루에 한걸음, 
 show_excerpts: false # set to true to show excerpts on the homepage
 
 paginate: 1
