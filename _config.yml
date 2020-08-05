@@ -1,9 +1,8 @@
 title: 웅's Tech Growth 
-author: GitHub User
+author: woong lee 
 email: woong7164@gmamil.com
 description: > # this means to ignore newlines until "show_exerpts:"
  I walk slowly, but I never walk backward.
- 하루에 한걸음, 
 show_excerpts: false # set to true to show excerpts on the homepage
 
 paginate: 1
@@ -12,6 +11,7 @@ paginate_path: "/blog/page:num/"
 tag_permalink_style: pretty
 tag_page_layout: tag_page
 tag_page_dir: tag
+avatar_image: "https://w7.pngwing.com/pngs/603/393/png-transparent-computer-icons-anonymous-avatar-anonymous-face-logo-head.png";
 
 # jekyll-dash date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
@@ -24,13 +24,7 @@ dash:
   # generate social links in footer
   # supported colors: green, red, orange, blue, cyan, pink, teal, yellow, indigo, purple
   social_links:
-    - url: https://twitter.com/bitbrain_
-      icon: twitter-square
-      color: cyan
-    - url: https://bitbrain.itch.io
-      icon: itch-io
-      color: red
-    - url: https://github.com/bitbrain
+    - url: https://github.com/woong7164
       icon: github-square
       color: purple
 
