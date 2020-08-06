@@ -13,6 +13,8 @@ tags: Javascript, type
 모든 자료형이라고 하지만 결국 나머지 것들은 글로벌 객체에서 파생되기 떄문에 참조형 타입은 모두 객체라고 할 수도 있겠다.
 
 
+
+
 정리해보면,   
 
 
@@ -26,11 +28,17 @@ tags: Javascript, type
 * `null`   
 
 
+
+
+
 ## 참조형 데이터 타입 
 
 *  객체 : 함수, 배열, 집합, 맵...
 *  Wrapper 객체 : Number, String, Boolean
 *  전역 객체(global object) : Obeject, Array, Date, RegExp, Math....
+
+
+
 
 
 두 데이터형의 근복적인 차이점이 있다. 원시형 데이터는 변경이 불가능(immutable) 하고 반대로 참조형 데이터는 변경이 가능하다는 것이다.  
@@ -43,6 +51,8 @@ str.trim();
 let trimStr = str.trim();
 // dev world
 ```
+
+
 
 
 ## 두 타입의 값을 비교하는 차이 
