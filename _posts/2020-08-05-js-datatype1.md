@@ -1,52 +1,81 @@
 ---
 layout: post
-title:  "원시형 데이터"
-description: this article explains something and gives a brief introduction.
-tags: welcome introduction
+title:  "원시타입(Primitive Type)과 참조 타입(Reference type)"
+description: 변경 불가능한 원시타입과 변경 불가능한 참조 타입에 대해서 알아보자.
+tags: Javascript, type 
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+다른언어를 먼저 시작한 개발자가(나는 자바,C,,, 등등을 먼저 접했다.) 자바스크립트를 접근할때 유의하고 봐야할 점은 타입이라고 생각한다. 다른언어에 비해 자료형이 
+세분화되어 있지 않고 생소한 개념들이 나오기 때문인데... 왠지모르게 자바스크립트를 파면 팔수록 이 개념이 중요하다는 생각이 들곤한다. 
 
-> "원시형 데이터"
-> Also I think this sentence is quite long.
-> more quote text to come
->   - Chris Wayne
+원시형 데이터는 숫자, 문자열, 불리언형, 심볼형, `undefined`, `null` 6개 뿐이고, 이 자료형을 제외하고 모든 자료형은 참조형 데이터 타입이다. 
+모든 자료형이라고 하지만 결국 나머지 것들은 글로벌 객체에서 파생되기 떄문에 참조형 타입은 모두 객체라고 할 수도 있겠다.
 
-However, these are bulletpoints:
+정리해보면, 
 
-* To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
-* another point
-* that's it
 
-However, these entries should not be styled:
+## 원시형 데이터 타입 
 
-1. an entry
-2. another entry
-3. that's another entry
+* 숫자
+* 문자열 
+* 불리언
+* 심볼
+* `undefined`
+* `null` 
 
-<video preload="auto" poster="https://pbs.twimg.com/tweet_video_thumb/D5aj3tfW0AIiSxo.jpg" src="https://video.twimg.com/tweet_video/D5aj3tfW0AIiSxo.mp4" type="video/mp4" autoplay controls></video>
+## 참조형 데이터 타입 
 
-Jekyll also offers powerful support for code snippets:
+1. 객체 : 함수, 배열, 집합, 맵...
+2. Wrapper 객체 : Number, String, Boolean
+3. 전역 객체(global object) : Obeject, Array, Date, RegExp, Math....
 
-```ruby
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
+
+두 데이터형의 근복적인 차이점이 있다. 원시형 데이터는 변경이 불가능(immutable) 하고 반대로 참조형 데이터는 변경이 가능하다는 것이다.
+숫자를 바꾸면 다른 값이 되기 때문에 숫자나, 불리언은 명확하게 불가능해보인다. 문자열은 좀 애매해 보이는데 문자의 배열이니 원소 하나를 바꿀 수도 있을것 같은 느낌이 든다. 하지만 자바스크립트는 각 문자열의 문자 변경이 불가능하다. 모든 문자열 수정 메서드는 새로운 문자열을 반환하는 것을 경험해 보았으니,, 알것이다.
+
+문자열 수정 함수 예
+```javascript
+let str = " dev world";
+str.trim();
+#=> str은 변하지 않음
+let trimStr = str.trim();
+#=> dev world
 ```
 
-# An interesting fact on the economy of modern America
+## 두 타입의 값을 비교하는 차이 
 
-Pictures look like this:
+이개념은 추후에 리액트 랜더링 최적화시에 많은 도움을 주었다. 
 
-![image](https://picsum.photos/200)
+원시타입은 단순히 값으로 비교한다. 값이 같으면 같은 것이고 다르면 다른 것이다. So Simple~ 
+예외적으로 문자열은 문자의 길이와 각 인덱스의 문자열들이 같아야만 같은 문자열이라고 판단한다. 
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+객체는(참조형) 값을 변경 할 수 있는(imutable) 속성 떄문에 값으로 비교되지 않는다. 언제 어디서 변경 할 지 모르니,, 예를 들어 내가 머리의 길이 값을 변경한다고 내가 나인게 변하지 않듯이,,? 라고 이해해보자. 설령 나와 내친구의 머리길이가 같더라도 나와 내친구는 같지 않다. 머리길이, 눈, 코, 입 다 같아도 어쨋든 나는 나고 내친구는 내친구 이듯이 객체도 두 객체가 같은 프로퍼티의 값을 가지더라도 두 객체는 같지 않다. 말이길다.. 
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+객체는 참조 타입이라고 설명하였다. 원시 타입은 값을 저장하지만, 참조타입은 참조(주소값)을 저장할 뿐이다. 결국 저장된 주소값이 다르다면 값이 아무리 같은들 같지 않은 객체라는 것. 
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/jekyll?src=hash&amp;ref_src=twsrc%5Etfw">#jekyll</a> <a href="https://twitter.com/hashtag/dash?src=hash&amp;ref_src=twsrc%5Etfw">#dash</a> now officially supports both, dark and light theming. Enjoy!<a href="https://t.co/4evp9pX2Ws">https://t.co/4evp9pX2Ws</a> <a href="https://t.co/vOQCZjGKic">pic.twitter.com/vOQCZjGKic</a></p>&mdash; 〽️ɪɢᴜᴇʟ (@bitbrain_) <a href="https://twitter.com/bitbrain_/status/1166440978124877827?ref_src=twsrc%5Etfw">August 27, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+그렇다면 한 객체의 주소값을 다른 객체에 저장한다면? 두 객체는 같은 값 (값에는 주소값이 들어있다)을 같기 때문에 같다고 판단한다.
+
+객체 비교 
+```javascript
+let obj1 = {who: "ung"};
+let obj2 = {who: "ung"};
+
+obj1===obj2
+#=> false
+
+obj1 = obj2;
+#=> obj1는 obj2와 같은 객체를 참조함. 
+obj1===obj2
+#=> true
+
+obj1.who = "lee"
+
+obj2.who
+#=> lee
+#=> obj1을 변경했지만 obj2도 변경됨 
+```
+
+
+자바스크립트 책 맨 앞에 나오는 개념이라 쉽다고 무심코 넘어갔었다면... 실무에서 삽질을 좀 할 것이다. 언제나 기본기가 탄탄한 사람이 되어야한다
+다음에는 그래서 객체를 immutable 하게 쓰고 싶을땐 어떻게 해야할지에 대해 정리해보자.
+참조하게 하지 않고 복사본을 만들어서 사용하는 .........생략 
