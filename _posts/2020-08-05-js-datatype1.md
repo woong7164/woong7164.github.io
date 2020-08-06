@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "원시타입(Primitive Type)과 참조 타입(Reference type)"
+title:  "[js]원시타입(Primitive Type)과 참조 타입(Reference type)"
 description: 변경 불가능한 원시타입과 변경 불가능한 참조 타입에 대해서 알아보자.
 tags: Javascript, type 
 ---
@@ -25,21 +25,21 @@ tags: Javascript, type
 
 ## 참조형 데이터 타입 
 
-1. 객체 : 함수, 배열, 집합, 맵...
-2. Wrapper 객체 : Number, String, Boolean
-3. 전역 객체(global object) : Obeject, Array, Date, RegExp, Math....
+*  객체 : 함수, 배열, 집합, 맵...
+*  Wrapper 객체 : Number, String, Boolean
+*  전역 객체(global object) : Obeject, Array, Date, RegExp, Math....
 
+## 
 
 두 데이터형의 근복적인 차이점이 있다. 원시형 데이터는 변경이 불가능(immutable) 하고 반대로 참조형 데이터는 변경이 가능하다는 것이다.
 숫자를 바꾸면 다른 값이 되기 때문에 숫자나, 불리언은 명확하게 불가능해보인다. 문자열은 좀 애매해 보이는데 문자의 배열이니 원소 하나를 바꿀 수도 있을것 같은 느낌이 든다. 하지만 자바스크립트는 각 문자열의 문자 변경이 불가능하다. 모든 문자열 수정 메서드는 새로운 문자열을 반환하는 것을 경험해 보았으니,, 알것이다.
 
-문자열 수정 함수 예
 ```javascript
 let str = " dev world";
 str.trim();
-#=> str은 변하지 않음
+ str은 변하지 않음
 let trimStr = str.trim();
-#=> dev world
+// dev world
 ```
 
 ## 두 타입의 값을 비교하는 차이 
@@ -55,24 +55,24 @@ let trimStr = str.trim();
 
 그렇다면 한 객체의 주소값을 다른 객체에 저장한다면? 두 객체는 같은 값 (값에는 주소값이 들어있다)을 같기 때문에 같다고 판단한다.
 
-객체 비교 
+
 ```javascript
 let obj1 = {who: "ung"};
 let obj2 = {who: "ung"};
 
 obj1===obj2
-#=> false
+// false
 
 obj1 = obj2;
 #=> obj1는 obj2와 같은 객체를 참조함. 
 obj1===obj2
-#=> true
+// true
 
 obj1.who = "lee"
 
 obj2.who
-#=> lee
-#=> obj1을 변경했지만 obj2도 변경됨 
+// lee
+// obj1을 변경했지만 obj2도 변경됨 
 ```
 
 
