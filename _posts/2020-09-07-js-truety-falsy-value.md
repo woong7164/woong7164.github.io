@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[js]자바스크립트 참 같은 값(truety) 거짓 같은 값(falsy)"
-description: 자바스크립트에서 참으로 판단되는 값(truety value)과 거짓으로 판단되는 값(falsy value)을 알아보자.
+description: 자바스크립트에서 참 같은 값(truety value)과 거짓 같은 값(falsy value)을 알아보자.
 tags: Javascript, js, 자바스크립트, truety, falsy, 참, 거짓,  참 같은 값, 거짓 같은 값
 ---
 
@@ -16,6 +16,7 @@ Javascript 조건절, 반복문 등 불리언 값이 필요한 곳에서 형 변
 
 
 
+
 ## falsy value
 
 * 0 or -0 : 숫자 zero, 음수 zero
@@ -24,6 +25,7 @@ Javascript 조건절, 반복문 등 불리언 값이 필요한 곳에서 형 변
 * `null` : 아무런 값도 없음
 * `undefined` : undefined - 원시값
 * `NaN` : NaN - 원시값
+
 
 
 
